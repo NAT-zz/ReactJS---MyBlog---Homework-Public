@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom"
 
-const posts = require('../data/MyModels').myPosts
+const posts = require('../data/MyModels').myPosts;
+const postComments = require('../data/MyModels').postComments;
 
 function Home(){
     const [registryData, setRegistryData] = useState([...posts])
@@ -12,6 +13,7 @@ function Home(){
             if (tempData[i].id === id) { 
                 tempData.splice(i, 1); 
                 posts.splice(i, 1);
+                postComments.splice(i, 1);
                 break; 
             }
         }
